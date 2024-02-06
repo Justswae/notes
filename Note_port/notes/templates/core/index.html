@@ -1,0 +1,17 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}Home {% endblock %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+    <h3>Welcome, {{request.user}} </h3>
+    <a href="{% url 'items:user_notes' %}">View My Notes </a>
+    {% else %}
+        <div>
+            <h3>Home</h3>
+            <small>Kindly login <a href="{% url 'core:login' %}">here</a> to view your notes <br>Or <a href="{% url 'core:signup' %}">signup</a> to start creating your notes </small>
+        </div>
+    {% endif %}
+
+{% endblock %}

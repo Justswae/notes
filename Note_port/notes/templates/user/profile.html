@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}Home {% endblock %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        <div>
+            <h3>Welcome {{request.user}}</h3>
+        </div>
+    {% else %}
+        <h3>You're not logged in</h3>
+        <small>Kindly login <a href="{% url 'core:login' %}">here</a></small>
+    {% endif %}
+
+{% endblock %}

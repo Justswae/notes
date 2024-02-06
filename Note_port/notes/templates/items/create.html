@@ -1,0 +1,13 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}New Note {% endblock %}
+
+{% block content %}
+    <h3>New Note</h3>
+    <form method="post">
+        {% csrf_token %}
+
+        {{new_note.as_p}}
+        <input type="submit" value="Create">
+    </form>
+{% endblock %}

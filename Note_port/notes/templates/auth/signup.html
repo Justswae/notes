@@ -1,0 +1,30 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}Signup {% endblock %}
+
+{% block content %}
+    <div>
+        <h3>Signup</h3>
+        <form method="post">
+            {% csrf_token %}
+
+            <label>Username</label><br>
+            {{signupform.username}}
+            <br>
+
+            <label>Email</label><br>
+            {{signupform.email}}
+            <br>
+
+            <label>Password</label><br>
+            {{signupform.password1}}
+            <br>
+
+            <label>Repeat Password</label><br>
+            {{signupform.password2}}
+            <br><br>
+
+            <input type="submit" value="Signup">
+        </form>
+    </div>
+{% endblock %}

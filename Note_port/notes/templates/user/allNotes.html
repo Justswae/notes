@@ -1,0 +1,18 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}My Notes {% endblock %}
+
+{% block content %}
+    <div>
+        <h3>My Notes</h3>
+        <a href="{% url 'items:create' %}">Add Notes</a>
+
+            {% for notes in user_notes %}
+                <a href="{% url 'items:details' notes.id %}">
+                    <p>{{notes.title}}</p>
+                    <small>{{notes.content}}</small>
+                </a>
+            {% endfor %}
+       
+    </div>
+{% endblock %}

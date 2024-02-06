@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}Login {% endblock %}
+
+{% block content %}
+    <div>
+        <h3>Login</h3>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{form.as_p}}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+{% endblock %}
